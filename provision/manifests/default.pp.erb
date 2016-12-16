@@ -1,0 +1,26 @@
+node '<%= @master[:hostname] %>' {
+  include ::puppet_settings::master
+  include ::ssh_keys
+  class { '::r10k':
+    version    => '<%= @r10k[:version] %>',
+    git_repo   => '<%= @r10k[:git_repo] %>'
+  }
+}
+
+node '<%= @node1[:hostname] %>' {
+  class { '::puppet_settings::agent':
+    environment => '<%= @node1[:environment] %>'
+  }
+}
+
+node '<%= @node2[:hostname] %>' {
+  class { '::puppet_settings::agent':
+    environment => '<%= @node2[:environment] %>'
+  }
+}
+
+node '<%= @node3[:hostname] %>' {
+  class { '::puppet_settings::agent':
+    environment => '<%= @node3[:environment] %>'
+  }
+}

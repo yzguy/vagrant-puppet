@@ -1,0 +1,50 @@
+---
+:puppet:
+  :version: 3.3.0
+  :url: https://pm.puppetlabs.com/puppet-enterprise/
+  :answer_file: answers/master.txt
+  :manifests_path: provision/manifests
+  :module_path: provision/modules
+  :password: password
+
+:r10k:
+  :version: 1.5.1
+  :git_repo: 'git@bitbucket.org:yzguy/puppet.git'
+
+:vm:
+  :box_check_update: false
+
+:provision:
+  :path_fix_path: provision/scripts/path.sh
+  :r10k_path: provision/scripts/r10k.sh
+
+:master:
+  :box: bento/centos-6.7
+  :hostname: usw2-prod-puppetmaster-1.cloud.yzguy.io
+  :ip: 172.20.240.10
+  :cpu: 1
+  :memory: 1024
+
+:node1:
+  :box: bento/centos-6.7
+  :hostname: usw2-prod-node-1.cloud.yzguy.io
+  :ip: 172.20.240.20
+  :cpu: 1
+  :memory: 512
+  :environment: production
+
+:node2:
+  :box: bento/centos-6.7
+  :hostname: usw2-staging-node-2.cloud.yzguy.io
+  :ip: 172.20.240.30
+  :cpu: 1
+  :memory: 512
+  :environment: production
+
+:node3:
+  :box: bento/centos-6.7
+  :hostname: usw2-prod-node-3.cloud.yzguy.io
+  :ip: 172.20.240.40
+  :cpu: 1
+  :memory: 512
+  :environment: production

@@ -1,0 +1,7 @@
+.pe_build/
+.vagrant/
+answers/master.txt
+provision/manifests/default.pp
+provision/modules/ssh_keys/files/id_rsa
+provision/modules/ssh_keys/files/id_rsa.pub
+provision/modules/ssh_keys/files/known_hosts
